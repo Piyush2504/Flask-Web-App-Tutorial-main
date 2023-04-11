@@ -4,13 +4,13 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-DB_NAME = "cclmpr"
+DB_NAME = "notepad"
 
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
-    DATABASE_URL = f"mysql+pymysql://admin:12345678@cclmpr.cdumv2nygh7u.ap-northeast-1.rds.amazonaws.com:3306/{DB_NAME}"
+    DATABASE_URL = f"mysql+pymysql://admin:12345678@notepad.cdumv2nygh7u.ap-northeast-1.rds.amazonaws.com:3306/{DB_NAME}"
 
     app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
     db.init_app(app)
